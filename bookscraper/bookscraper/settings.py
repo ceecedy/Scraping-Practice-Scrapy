@@ -14,6 +14,7 @@ NEWSPIDER_MODULE = 'bookscraper.spiders'
 
 FEEDS = {
     'booklists.json': {'format': 'json'},
+    'quoteslists.json': {'format': 'json'}
 }
 
 SCRAPEOPS_API_KEY = '9cbfc604-b66f-4e96-9fe2-35eaea82bda7' # signup at https://scrapeops.io
@@ -74,8 +75,9 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'bookscraper.pipelines.BookscraperPipeline': 300,
+   #'bookscraper.pipelines.BookscraperPipeline': 300,
 #    'bookscraper.pipelines.SaveToMySQLPipeline': 400,
+    'bookscraper.pipelines.QuotePipeline': 300
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

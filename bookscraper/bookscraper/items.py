@@ -27,6 +27,6 @@ class BookItem(scrapy.Item):
     price = scrapy.Field()
    
 class QuoteItem(scrapy.Item):
-    quote = scrapy.Field()
+    quote_text = scrapy.Field()
     author = scrapy.Field()
     tags = scrapy.Field()

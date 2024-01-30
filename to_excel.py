@@ -1,6 +1,7 @@
 import pandas as pd  
 
-json_path = '/Users/macintoshcider/Documents/Programming/Python/Scraping-Practice-Scrapy/bookscraper/bookscraper/booklists.json'
+# you should put your own json path here...
+json_path = 'your_json_path'
 
 # read the json data via pandas. 
 json_data = pd.read_json(json_path)

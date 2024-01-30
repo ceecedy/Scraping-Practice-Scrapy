@@ -17,7 +17,7 @@ FEEDS = {
     'quoteslists.json': {'format': 'json'}
 }
 
-SCRAPEOPS_API_KEY = '9cbfc604-b66f-4e96-9fe2-35eaea82bda7' # signup at https://scrapeops.io
+SCRAPEOPS_API_KEY = 'put_your_own_api_key' # signup at https://scrapeops.io
 SCRAPEOPS_FAKE_USER_AGENT_ENDPOINT = 'https://headers.scrapeops.io/v1/user-agents'
 SCRAPEOPS_FAKE_USER_AGENT_ENABLED = True
 SCRAPEOPS_NUM_RESULTS = 5

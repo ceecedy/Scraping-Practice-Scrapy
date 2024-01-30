@@ -4,10 +4,6 @@ The Booklists data is used as a practice when learning scrapy. This practice and
 The other spider created is a self-practice demonstration of skills in scrapy. 
 
 ## Step 1 - Install & activate your python virtual environment (If you want to do it in venv)
-To install the python virtual environment follow the following instructions below.
-
-For Mac: https://thepythonscrapyplaybook.com/freecodecamp-beginner-course/freecodecamp-scrapy-beginners-course-part-2-scrapy-environment/#setting-up-your-python-virtual-environment-on-macos
-
 Then to activate it so that any new modules that are installed are installed into this virtual environment:
 
 `source venv/bin/activate`

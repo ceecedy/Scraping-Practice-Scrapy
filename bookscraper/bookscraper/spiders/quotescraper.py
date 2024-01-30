@@ -1,4 +1,5 @@
 import scrapy
+from bookscraper.items import QuoteItem
 
 class QuotescraperSpider(scrapy.Spider):
     name = "quotescraper"
@@ -19,12 +20,14 @@ class QuotescraperSpider(scrapy.Spider):
 
             # Check if values are not None before yielding
             if quote_text is not None and author is not None:
-                yield {
-                    'quote_text': quote_text.strip(),
-                    'author': author.strip(),
-                    'tags': tags,
-                }
-        
+                # Use the QuoteItem to structure the scraped data
+                item = QuoteItem(
+                    quote=quote_text.strip(),
+                    author=author.strip(),
+                    tags=tags,
+                )
+            yield item
+            
         next_page = response.css('li.next a ::attr(href)').get()
         # checking if next_page is existing. 
         if next_page is not None:

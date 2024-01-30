@@ -67,7 +67,7 @@ class BookscraperPipeline:
 
 
 class SaveToMySQLPipeline:
-    '''
+    
     def __init__(self):
         self.conn = mysql.connector.connect(
             host = 'localhost',
@@ -157,4 +157,16 @@ class SaveToMySQLPipeline:
         ## Close cursor & connection to database 
         self.cur.close()
         self.conn.close()
-    '''
+
+class QuotePipeline:
+    def process_item(self, item, spider):
+        # Remove unknown characters from quote_text
+        item['quote_text'] = item['quote_text'].encode('ascii', 'ignore').decode('utf-8')
+
+        # Remove double quotes from the author
+        item['author'] = item['author'].replace('"', '')
+
+        # Format tags as a comma-separated string without brackets and single quotes
+        item['tags'] = ', '.join(tag.replace('"', '') for tag in item['tags'])
+
+        return item
